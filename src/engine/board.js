@@ -1,6 +1,6 @@
-import Player from './player';
-import GameSettings from './gameSettings';
-import Square from './square';
+import Player from "./player";
+import GameSettings from "./gameSettings";
+import Square from "./square";
 
 export default class Board {
     constructor() {
@@ -32,15 +32,15 @@ export default class Board {
                 }
             }
         }
-        throw new Error('The supplied piece is not on the board');
+        throw new Error("The supplied piece is not on the board");
     }
 
     movePiece(fromSquare, toSquare) {
-        const movingPiece = this.getPiece(fromSquare);        
+        const movingPiece = this.getPiece(fromSquare);
         if (!!movingPiece && movingPiece.player === this.currentPlayer) {
             this.setPiece(toSquare, movingPiece);
             this.setPiece(fromSquare, undefined);
-            this.currentPlayer = (this.currentPlayer === Player.WHITE ? Player.BLACK : Player.WHITE);
+            this.currentPlayer = this.currentPlayer === Player.WHITE ? Player.BLACK : Player.WHITE;
         }
     }
 }

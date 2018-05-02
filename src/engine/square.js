@@ -15,4 +15,8 @@ export default class Square {
     toString() {
         return `Row ${this.row}, Col ${this.col}`;
     }
+
+    offSet(rowDiff, colDiff) {
+        return Square.at(this.row + rowDiff, this.col + colDiff);
+    }
 }
