@@ -1,6 +1,7 @@
 export default class Piece {
     constructor(player) {
         this.player = player;
+        this.hasEverMoved = false;
     }
 
     getAvailableMoves(board) {
@@ -9,6 +10,7 @@ export default class Piece {
 
     moveTo(board, newSquare) {
         const currentSquare = board.findPiece(this);
+        this.hasEverMoved = true;
         board.movePiece(currentSquare, newSquare);
     }
 
