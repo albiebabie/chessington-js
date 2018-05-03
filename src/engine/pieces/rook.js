@@ -14,11 +14,11 @@ export default class Rook extends Piece {
     }
 
     getHorizontalSteps(board) {
-        const currentPostion = this.myPos(board);
+        const currentPosition = this.myPos(board);
         let squares = [];
         for (let i = 0; i < GameSettings.BOARD_SIZE; i++) {
-            if (i !== currentPostion.col) {
-                squares.push(Square.at(currentPostion.row, i));
+            if (i !== currentPosition.col) {
+                squares.push(Square.at(currentPosition.row, i));
             }
         }
         return squares;
