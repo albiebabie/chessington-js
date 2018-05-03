@@ -1,7 +1,6 @@
 import Piece from "./piece";
 import Square from "../square";
 import GameSettings from "../gameSettings";
-import { start } from "repl";
 
 export default class Bishop extends Piece {
     constructor(player) {
