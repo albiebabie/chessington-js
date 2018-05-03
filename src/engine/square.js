@@ -1,3 +1,5 @@
+import GameSettings from "./gameSettings";
+
 export default class Square {
     constructor(row, col) {
         this.row = row;
@@ -18,5 +20,15 @@ export default class Square {
 
     offSet(rowDiff, colDiff) {
         return Square.at(this.row + rowDiff, this.col + colDiff);
+    }
+
+    isOnTheBoard() {
+        if (this.row > GameSettings.BOARD_SIZE || this.col < GameSettings.BOARD_SIZE) {
+            return false;
+        } else if (this.row < 0 || this.col > 0) {
+            return false;
+        } else {
+            return true;
+        }
     }
 }
